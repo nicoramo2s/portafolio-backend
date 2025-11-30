@@ -1,59 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-:root{
-    --color-primary-gold:#E6F288;
-    --color-secondary-green:#7E8C70;
-    --color-primary-sky:#6581A6;
-    --color-blue: #2A4B8C;
-    --color-dark: #0E1426;
-    --color-white:#ffffff;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+:root {
+  /* Modern Dark Theme Palette */
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-surface-hover: #2d2d2d;
+
+  --color-primary: #00e5ff; /* Cyan/Teal Accent */
+  --color-primary-dark: #00b8d4;
+
+  --color-secondary: #7c4dff; /* Deep Purple Accent */
+
+  --color-text-main: #ffffff;
+  --color-text-muted: #b0b0b0;
+
+  --color-border: #333333;
+
+  /* Legacy mapping for compatibility if needed, but we should try to use new names */
+  --color-primary-gold: var(--color-primary);
+  --color-blue: var(--color-secondary);
+  --color-dark: var(--color-bg);
+  --color-white: var(--color-text-main);
 }
 
-html{
-    font-size: 62.5%;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Default to Poppins for a modern feel */
+  scroll-behavior: smooth;
 }
 
-*, *::after, *::before{
-    box-sizing: inherit;
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
-body{
-    margin: 0;
-    line-height: 1.6; /* Espaciado entre líneas */
-    color: #333; /* Color de texto base */
-    background-color: #f4f4f4; /* Un fondo suave para la página */
+body {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+  font-family: "Roboto", sans-serif; /* Use Roboto for body text for readability */
 }
 
-/* Estilos para las secciones principales */
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-text-main);
+  margin-top: 0;
+}
+
+/* Main Sections */
 main section {
-    padding: 40px 0; /* Espaciado interno para las secciones */
-    border-bottom: 1px solid #ddd; /* Separador entre secciones */
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 main section:last-child {
-    border-bottom: none; /* Quitar el borde de la última sección */
+  border-bottom: none;
 }
 
 main h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Estilos del Footer */
+main h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-secondary);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+/* Footer */
 footer {
-    color: var(--color-white); /* Texto blanco */
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9rem;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 4rem 0;
+  font-size: 1.4rem;
+  border-top: 1px solid var(--color-border);
 }
 
 footer a {
-    color: #ffc107; /* Enlaces en el footer */
-    text-decoration: none;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  color: var(--color-primary-dark);
+  text-decoration: underline;
 }
