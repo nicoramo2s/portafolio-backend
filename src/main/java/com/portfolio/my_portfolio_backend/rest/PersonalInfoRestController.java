@@ -14,7 +14,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/test/personal-info")
 @RequiredArgsConstructor
-public class PersonalInfoTestController {
+public class PersonalInfoRestController {
 
     private final IPersonalInfoService personalInfoService;
 
@@ -29,7 +29,8 @@ public class PersonalInfoTestController {
         if (info.isPresent()) {
             return info.get();
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Informacion personal no disponible en el ID: " + id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "Informacion personal no disponible en el ID: " + id);
         }
     }
 

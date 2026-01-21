@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-</body>
+<section id="about" th:fragment="about">
+    <h2>WHO AM I ?</h2>
+    <p th:text="${personalInfo.profileDescription}"></p>
+    <a href="#projects">
+        <button>SHOW MY PROJECTS</button>
+    </a>
+
+</section>
+
 </html>

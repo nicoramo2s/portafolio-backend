@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/list.css">
+    <title>Lista de Proyectos</title>
 </head>
+
 <body>
-$END$
+    <header>
+        <div class="container">
+            <div th:insert="~{fragments/nav-admin :: nav-admin}"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="admin-section">
+                <h2>Proyectos Guardados</h2>
+                <div class="admin-actions">
+                    <a th:href="@{/projects/new-project}">Crear Nuevo Proyecto </a>
+                    <a th:href="@{/}">Volver al Portafolio</a>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Descripcion</th>
+                            <th>Url del Proyecto</th>
+                            <th>Imagen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="project : ${projects}">
+                            <td th:text="${project.title}">Título del proyecto</td>
+                            <td th:text="${project.description}">Descripción</td>
+                            <td th:text="${project.projectUrl}">URL</td>
+                            <td><img th:src="@{${project.imageUrl}}" width="150" height="150" alt="Imagen del proyecto">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+
+    <div th:insert="~{fragments/footer :: footer}"></div>
 </body>
+
 </html>

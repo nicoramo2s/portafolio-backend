@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
 </head>
+
 <body>
     <h1>Formulario de Información Personal</h1>
     <form th:action="@{/personal-info-save}" th:object="${personalInfo}" method="post">
@@ -11,27 +13,13 @@
             <label for="firtsName">Nombre: </label>
             <input type="text" id="firtsName" th:field="*{firtsName}">
         </div>
-<!--        <div>-->
-<!--            <label>Apellido: </label>-->
-<!--            <input type="text" name="" id="" th:field="*{lastName}">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label>Titulo: </label>-->
-<!--            <input type="text" name="" id="" th:field="*{title}">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label>Descripción: </label>-->
-<!--            <input type="text" name="" id="" th:field="*{profileDescription}">-->
-<!--        </div>-->
+
         <div>
             <label for="email">Email: </label>
             <input type="text" id="email" th:field="*{email}">
         </div>
-<!--        <div>-->
-<!--            <label>Teléfono: </label>-->
-<!--            <input type="text" name="" id="">-->
-<!--        </div>-->
         <button type="submit">Guardar</button>
     </form>
 </body>
+
 </html>

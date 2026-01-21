@@ -1,0 +1,182 @@
+main .container {
+  background-color: transparent; /* Remove dark background block */
+  padding: 2rem 0;
+}
+
+.admin-section {
+  padding: 0;
+  color: var(--color-text-main);
+}
+
+.admin-section h2 {
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+  font-size: 2.8rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Actions at the top (buttons) */
+.admin-actions {
+  display: flex;
+  justify-content: flex-end; /* Align to right */
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.admin-actions a,
+.admin-section div > a:first-child {
+  /* Targets "Crear nuevo..." buttons */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--color-primary);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.1);
+}
+
+.admin-actions a:hover,
+.admin-section div > a:first-child:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Logout specific style */
+.logout-link {
+  border-color: var(--color-secondary) !important;
+  color: var(--color-text-muted) !important;
+  box-shadow: none !important;
+}
+
+.logout-link:hover {
+  background: var(--color-surface-hover) !important;
+  color: var(--color-text-main) !important;
+  border-color: var(--color-text-main) !important;
+  box-shadow: none !important;
+}
+
+/* Admin Table Styles */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 0;
+  background-color: var(--color-surface);
+  overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 1.8rem 2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+.admin-table th {
+  background-color: rgba(69, 162, 158, 0.1); /* Subtle tint */
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tbody tr:hover td {
+  background-color: var(--color-surface-hover);
+}
+
+.admin-table td {
+  color: var(--color-text-muted);
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+
+.admin-table img {
+  max-width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px; /* Softer radius */
+  border: 1px solid var(--color-border);
+}
+
+/* Actions Column */
+.admin-table td:last-child {
+  white-space: nowrap;
+  width: 1%; /* Shrink to fit */
+  text-align: right;
+}
+
+/* Action Buttons in Table */
+.btn-edit,
+.btn-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  margin-left: 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: rgba(102, 252, 241, 0.1);
+  color: var(--color-primary);
+  border: 1px solid transparent;
+}
+
+.btn-edit:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+}
+
+.btn-delete {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--color-danger);
+  border: 1px solid transparent;
+}
+
+.btn-delete:hover {
+  background-color: var(--color-danger);
+  color: white;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+}
+
+/* No data message */
+.no-data-message {
+  text-align: center;
+  padding: 4rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}

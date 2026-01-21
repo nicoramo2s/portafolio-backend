@@ -1,6 +1,5 @@
 package com.portfolio.my_portfolio_backend.repository;
 
-import com.portfolio.my_portfolio_backend.model.PersonalInfo;
 import com.portfolio.my_portfolio_backend.model.Skill;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -16,7 +15,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class SkillRepositoryImpl implements ISkillRepository{
+public class SkillRepositoryImpl implements ISkillRepository {
 
     private final JdbcTemplate jdbcTemplate;
     private final RowMapper<Skill> skillRowMapper = (rs, rowNum) -> {
@@ -35,7 +34,7 @@ public class SkillRepositoryImpl implements ISkillRepository{
             String sql = "INSERT INTO skills (name, level_percentage, icon_class, personal_info_id) VALUES (?, ?, ?, ?)";
             KeyHolder keyHolder = new GeneratedKeyHolder();
             jdbcTemplate.update((connection) -> {
-                PreparedStatement ps = connection.prepareStatement(sql, new String[]{"id"});
+                PreparedStatement ps = connection.prepareStatement(sql, new String[] { "id" });
                 ps.setString(1, skill.getName());
                 ps.setObject(2, skill.getLevelPercentage(), java.sql.Types.INTEGER);
                 ps.setString(3, skill.getIconClass());

@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/form-style.css">
+
     <title>Formulario</title>
 </head>
+
 <body>
-    <h1>Formulario de Información Personal</h1>
-    <form th:action="@{/personal-info-save}" th:object="${personalInfo}" method="post">
-        <div>
-            <label for="firtsName">Nombre: </label>
-            <input type="text" id="firtsName" th:field="*{firtsName}">
+    <header>
+        <div class="container">
+            <div th:insert="~{fragments/nav-admin :: nav-admin}"></div>
         </div>
-<!--        <div>-->
-<!--            <label>Apellido: </label>-->
-<!--            <input type="text" name="" id="" th:field="*{lastName}">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label>Titulo: </label>-->
-<!--            <input type="text" name="" id="" th:field="*{title}">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label>Descripción: </label>-->
-<!--            <input type="text" name="" id="" th:field="*{profileDescription}">-->
-<!--        </div>-->
-        <div>
-            <label for="email">Email: </label>
-            <input type="text" id="email" th:field="*{email}">
+    </header>
+    <main>
+        <div class="container">
+            <section id="contact">
+                <h2>Formulario de Proyectos</h2>
+                <form class="contact-form" th:action="@{/projects/save}" th:object="${projectDto}" method="post"
+                    enctype="multipart/form-data">
+
+                    <input type="text" id="title" th:field="*{title}" placeholder="Titulo del Proyecto">
+                    <div class="error-message" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+
+                    <textarea id="description" th:field="*{description}"
+                        placeholder="Descripción del Proyecto"></textarea>
+                    <div class="error-message" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">
+                    </div>
+
+                    <input type="text" id="projectUrl" th:field="*{projectUrl}" placeholder="Url del Proyecto">
+                    <div class="error-message" th:if="${#fields.hasErrors('projectUrl')}" th:errors="*{projectUrl}">
+                    </div>
+
+                    <label for="file">Imagen del Proyecto: </label>
+                    <input id="file" type="file" name="file">
+                    <div class="error-message" th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}"></div>
+
+                    <input type="text" id="personalInfoId" th:field="*{personalInfoId}"
+                        placeholder="ID Información Personal">
+                    <div class="error-message" th:if="${#fields.hasErrors('personalInfoId')}"
+                        th:errors="*{personalInfoId}"></div>
+
+                    <button type="submit">Guardar Proyecto</button>
+                </form>
+            </section>
         </div>
-<!--        <div>-->
-<!--            <label>Teléfono: </label>-->
-<!--            <input type="text" name="" id="">-->
-<!--        </div>-->
-        <button type="submit">Guardar</button>
-    </form>
+    </main>
+
+    <div th:insert="~{fragments/footer :: footer}"></div>
 </body>
+
 </html>
