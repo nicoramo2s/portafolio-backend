@@ -22,12 +22,17 @@
         <div class="container">
             <section class="admin-section">
                 <div class="admin-actions">
-                    <a th:href="@{/skills}">Volver a la lista de Habilidades</a>
-                    <a th:href="@{/logout}">Cerrar Sesión</a>
+                    <button class="btn-back" th:onclick="|window.location.href='@{/skills}'|">Volver a la lista de
+                        Habilidades</button>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                        <button type="submit" class="logout-link">Cerrar Sesión</button>
+                    </form>
                 </div>
                 <h2>Formulario de Habilidad</h2>
 
                 <form class="contact-form" method="post" th:action="@{/skills/save}" th:object="${skillDto}">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                     <input type="hidden" th:field="*{id}" />
 
                     <input type="text" placeholder="Nombre de la habilidad" required th:field="*{name}" />

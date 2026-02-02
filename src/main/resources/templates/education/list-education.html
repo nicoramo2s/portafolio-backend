@@ -24,7 +24,10 @@
             <section class="admin-section">
                 <div class="admin-actions">
                     <a th:href="@{/education/new}">Crear Nueva Educación</a>
-                    <a th:href="@{/logout}" class="logout-link">Cerrar Sesión</a>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                        <button type="submit" class="logout-link">Cerrar Sesión</button>
+                    </form>
                 </div>
                 <h2>Lista de Educación</h2>
 
@@ -63,6 +66,7 @@
                                 <a th:href="@{/education/edit/{id}(id=${edu.id})}" class="btn-edit">Editar</a>
                                 <form th:action="@{/education/delete/{id}(id=${edu.id})}" method="post"
                                     style="display:inline;">
+                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                                     <button type="submit" class="btn-delete"
                                         onclick="return confirm('¿Estás seguro de que quieres eliminar esta entrada de educación de tu portfolio en Mar del Plata?');">Eliminar</button>
                                 </form>

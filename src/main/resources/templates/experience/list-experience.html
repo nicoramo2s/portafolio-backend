@@ -62,6 +62,7 @@
                                 <a th:href="@{/experience/edit/{id}(id=${exp.id})}" class="btn-edit">Editar</a>
                                 <form th:action="@{/experience/delete/{id}(id=${exp.id})}" method="post"
                                     style="display:inline;">
+                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                                     <button type="submit" class="btn-delete"
                                         onclick="return confirm('¿Estás seguro de que quieres eliminar esta experiencia laboral de tu portfolio?');">Eliminar</button>
                                 </form>
