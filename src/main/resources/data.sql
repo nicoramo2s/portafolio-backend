@@ -1,5 +1,5 @@
 INSERT INTO personal_info (first_name, last_name, title, profile_description, profile_image_url, years_of_experience, email, phone, linkedin_url, github_url) VALUES
-('Dario Nicolas', 'Ramos', 'Full Stack Developer', 'Apasionado por el desarrollo web con experiencia en Java, Spring Boot y Angular. Disfruto construyendo soluciones robustas y escalables.', 'img/perfil-linkedin.jpg', 5, 'nicolasramo2s@hotmail.com', '+542645811779', 'https://linkedin.com/in/dario-nicolas-ramos', 'https://github.com/nicoramo2s');
+('Dario Nicolas', 'Ramos', 'Backend Developer', 'Apasionado por el desarrollo web con experiencia en Java, Spring Boot y Angular. Disfruto construyendo soluciones robustas y escalables.', 'img/perfil-linkedin.jpg', 5, 'nicolasramo2s@hotmail.com', '+542645811779', 'https://linkedin.com/in/dario-nicolas-ramos', 'https://github.com/nicoramo2s');
 
 INSERT INTO skills (name, level_percentage, icon_class, personal_info_id) VALUES
 ('Java', 90, 'img/logos/java.png', 1),
@@ -11,17 +11,5 @@ INSERT INTO skills (name, level_percentage, icon_class, personal_info_id) VALUES
 ('JavaScript', 75, 'img/logos/js.png', 1),
 ('Angular', 80, 'img/logos/angular-v.png', 1);
 
-INSERT INTO educations (degree, institution, start_date, end_date, description, personal_info_id) VALUES
-('Ingeniería en Sistemas', 'Universidad XYZ', '2015-03-01', '2020-12-15', 'Especialización en desarrollo de software y bases de datos.', 1),
-('Curso de Spring Boot Avanzado', 'Plataforma ABC', '2021-01-10', '2021-06-30', 'Profundización en microservicios y seguridad.', 1);
-
-INSERT INTO experiences (job_title, company_name, start_date, end_date, description, personal_info_id) VALUES
-('Desarrollador Full Stack Senior', 'Tech Solutions S.A.', '2022-01-01', NULL, 'Desarrollo y mantenimiento de aplicaciones empresariales. Liderazgo técnico de equipo de 3 personas.', 1),
-('Desarrollador Backend Junior', 'Innovatech Labs', '2020-09-01', '2021-12-31', 'Participación en el desarrollo de APIs RESTful y optimización de bases de datos.', 1);
-
-INSERT INTO projects (title, description, image_url, project_url, personal_info_id) VALUES
-('Portfolio Personal', 'Un portafolio web para mostrar mis habilidades y proyectos.', 'img/projects/project2.jpg', 'https://github.com/myusername/my-portfolio', 1),
-('Aplicación de E-commerce', 'Plataforma de comercio electrónico con carrito de compras y pasarela de pago.', 'img/projects/project1.jpg', 'https://github.com/myusername/ecommerce-app', 1);
-
 INSERT INTO users (username, password, enabled) VALUES
-('admin', '$2a$10$E6k8b2RJql/FcXb5Mj71tuOY1.XPCr1Dl8KudZdA24xFY3gY9Of4W', TRUE);
+('admin', '$2a$10$eLx7pnfI6DuSdjNwMGpdPOBt0PxEKXDNbrIPmU7MB6KbgLo44yv3S', TRUE);
